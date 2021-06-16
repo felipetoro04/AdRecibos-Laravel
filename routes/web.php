@@ -74,18 +74,7 @@ Route::put('/enterprices/{enterprice}','EnterpriceController@update');
 Route::delete('/enterprices/{enterprice}','EnterpriceController@destroy');
 
 */
-Route::get('api/receipts','ReceiptController@index');
-Route::get('api/receipts/{receipt}','ReceiptController@show');
-Route::post('api/receipts','ReceiptController@store');
-Route::put('api/receipts/{receipt}','ReceiptController@update');
-Route::delete('api/receipts/{receipt}','ReceiptController@destroy');
 
-Route::get('api/users','UserController@index');
-Route::get('api/users/{user}','UserController@show');
-Route::post('api/users','UserController@store');
-Route::put('api/users/{user}','UserController@update');
-Route::delete('api/users/{user}','UserController@destroy');
-Route::post('api/auth','UserController@auth');
 
 
 //Auth::routes();

@@ -10,8 +10,10 @@ class UserController extends Controller
 {
     public function index()
     {
+        
         $users = User::orderBy('id')->get();
         return UserResource::collection($users);
+        
     }
     public function show(User $user)
     {
@@ -32,11 +34,13 @@ class UserController extends Controller
             ]);
     }
 
-    public function store()
+    public function store(User $user)
     {
+        
         $data = request()->all();
-        $usuario = User::create($data);
+        $user = User::create($data);
         return new UserResource($user);
+    
     }
 
     public function update(User $user)

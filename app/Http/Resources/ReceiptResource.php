@@ -21,8 +21,8 @@ class ReceiptResource extends JsonResource
             'issueDate'=> $this->issueDate,
             'expirationDate'=> $this->expirationDate,
             'amountPayable'=> $this->amountPayable,
-            'idStatus'=> $this->idEstado,
-            'idUser'=> $this->idUsuario,                       
+            'idStatus'=> $this->idStatus,
+            'idUser'=> $this->idUser,                       
         ];
     }
 }
