@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->foreignId('idTypeSex')->constrained('parameters');
             $table->integer('age');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('password');
             $table->foreignId('idProfile')->constrained('profiles');
             $table->timestamp('created_at')->nullable();
@@ -35,6 +35,7 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
+       
         Schema::enableForeignKeyConstraints();
         Schema::dropIfExists('users');
     }
