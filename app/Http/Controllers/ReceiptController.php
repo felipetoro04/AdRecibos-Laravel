@@ -13,9 +13,10 @@ use App\Http\Resources\UserResource;
 
 class ReceiptController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $receipts = Receipt::orderBy('id')->get();
+        $include = $request->input('include');
+        $receipts = Receipt::with(['enterprise','user','status'])->orderBy('id')->get();
         return ReceiptResource::collection($receipts);
     }
     public function show(Receipt $receipt)
